@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "aQ9zUeR0pLNaVlXGP9R6WvTquqPCkZvCMDGNJ2x6WhE=",
+  "Source": "MessageHub.API",
+  "BasePath": "_content/MessageHub.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
