@@ -1,0 +1,17 @@
+/home/amirhossein/RiderProjects/MessageHub/Messaging/bin/Debug/net9.0/Messaging.deps.json
+/home/amirhossein/RiderProjects/MessageHub/Messaging/bin/Debug/net9.0/Messaging.dll
+/home/amirhossein/RiderProjects/MessageHub/Messaging/bin/Debug/net9.0/Messaging.pdb
+/home/amirhossein/RiderProjects/MessageHub/Messaging/bin/Debug/net9.0/Domain.dll
+/home/amirhossein/RiderProjects/MessageHub/Messaging/bin/Debug/net9.0/SharedLayer.dll
+/home/amirhossein/RiderProjects/MessageHub/Messaging/bin/Debug/net9.0/Domain.pdb
+/home/amirhossein/RiderProjects/MessageHub/Messaging/bin/Debug/net9.0/SharedLayer.pdb
+/home/amirhossein/RiderProjects/MessageHub/Messaging/obj/Debug/net9.0/Messaging.csproj.AssemblyReference.cache
+/home/amirhossein/RiderProjects/MessageHub/Messaging/obj/Debug/net9.0/Messaging.GeneratedMSBuildEditorConfig.editorconfig
+/home/amirhossein/RiderProjects/MessageHub/Messaging/obj/Debug/net9.0/Messaging.AssemblyInfoInputs.cache
+/home/amirhossein/RiderProjects/MessageHub/Messaging/obj/Debug/net9.0/Messaging.AssemblyInfo.cs
+/home/amirhossein/RiderProjects/MessageHub/Messaging/obj/Debug/net9.0/Messaging.csproj.CoreCompileInputs.cache
+/home/amirhossein/RiderProjects/MessageHub/Messaging/obj/Debug/net9.0/Messaging.csproj.Up2Date
+/home/amirhossein/RiderProjects/MessageHub/Messaging/obj/Debug/net9.0/Messaging.dll
+/home/amirhossein/RiderProjects/MessageHub/Messaging/obj/Debug/net9.0/refint/Messaging.dll
+/home/amirhossein/RiderProjects/MessageHub/Messaging/obj/Debug/net9.0/Messaging.pdb
+/home/amirhossein/RiderProjects/MessageHub/Messaging/obj/Debug/net9.0/ref/Messaging.dll

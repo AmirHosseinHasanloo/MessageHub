@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "Messaging.Protos";
+
+service MessageStream {
+  rpc Communicate (stream MessageEnvelope) returns (stream MessageEnvelope);
+}
+
+message MessageEnvelope {
+  string id = 1;
+  string type = 2; // Init, Request, Response
+  string engine = 3;
+  int32 messageId = 4;
+  string message = 5;
+  map<string, bool> regexResults = 6;
+  int32 messageLength = 7;
+  bool isValid = 8;
+}

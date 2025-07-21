@@ -1,0 +1,11 @@
+/home/amirhossein/RiderProjects/MessageHub/SharedLayer/bin/Debug/net9.0/SharedLayer.deps.json
+/home/amirhossein/RiderProjects/MessageHub/SharedLayer/bin/Debug/net9.0/SharedLayer.dll
+/home/amirhossein/RiderProjects/MessageHub/SharedLayer/bin/Debug/net9.0/SharedLayer.pdb
+/home/amirhossein/RiderProjects/MessageHub/SharedLayer/obj/Debug/net9.0/SharedLayer.GeneratedMSBuildEditorConfig.editorconfig
+/home/amirhossein/RiderProjects/MessageHub/SharedLayer/obj/Debug/net9.0/SharedLayer.AssemblyInfoInputs.cache
+/home/amirhossein/RiderProjects/MessageHub/SharedLayer/obj/Debug/net9.0/SharedLayer.AssemblyInfo.cs
+/home/amirhossein/RiderProjects/MessageHub/SharedLayer/obj/Debug/net9.0/SharedLayer.csproj.CoreCompileInputs.cache
+/home/amirhossein/RiderProjects/MessageHub/SharedLayer/obj/Debug/net9.0/SharedLayer.dll
+/home/amirhossein/RiderProjects/MessageHub/SharedLayer/obj/Debug/net9.0/refint/SharedLayer.dll
+/home/amirhossein/RiderProjects/MessageHub/SharedLayer/obj/Debug/net9.0/SharedLayer.pdb
+/home/amirhossein/RiderProjects/MessageHub/SharedLayer/obj/Debug/net9.0/ref/SharedLayer.dll

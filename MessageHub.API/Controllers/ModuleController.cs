@@ -22,6 +22,6 @@ public class ModuleController : ControllerBase
         var response = _healthCheckService.Handle(request);
 
         //TODO : Add fluent Validation.
-        return Ok();
+        return Ok(response);
     }
 }
