@@ -8,19 +8,19 @@
     "net9.0": []
   },
   "packageFolders": {
-    "/home/amirhossein/.nuget/packages/": {}
+    "/home/amirhosein/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/amirhossein/RiderProjects/MessageHub/SharedLayer/SharedLayer.csproj",
+      "projectUniqueName": "/home/amirhosein/RiderProjects/MessageHub/SharedLayer/SharedLayer.csproj",
       "projectName": "SharedLayer",
-      "projectPath": "/home/amirhossein/RiderProjects/MessageHub/SharedLayer/SharedLayer.csproj",
-      "packagesPath": "/home/amirhossein/.nuget/packages/",
-      "outputPath": "/home/amirhossein/RiderProjects/MessageHub/SharedLayer/obj/",
+      "projectPath": "/home/amirhosein/RiderProjects/MessageHub/SharedLayer/SharedLayer.csproj",
+      "packagesPath": "/home/amirhosein/.nuget/packages/",
+      "outputPath": "/home/amirhosein/RiderProjects/MessageHub/SharedLayer/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/amirhossein/.nuget/NuGet/NuGet.Config"
+        "/home/amirhosein/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -66,7 +66,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.108/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.106/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

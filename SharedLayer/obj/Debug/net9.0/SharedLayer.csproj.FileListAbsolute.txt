@@ -9,3 +9,15 @@
 /home/amirhossein/RiderProjects/MessageHub/SharedLayer/obj/Debug/net9.0/refint/SharedLayer.dll
 /home/amirhossein/RiderProjects/MessageHub/SharedLayer/obj/Debug/net9.0/SharedLayer.pdb
 /home/amirhossein/RiderProjects/MessageHub/SharedLayer/obj/Debug/net9.0/ref/SharedLayer.dll
+/home/amirhosein/RiderProjects/MessageHub/SharedLayer/bin/Debug/net9.0/SharedLayer.deps.json
+/home/amirhosein/RiderProjects/MessageHub/SharedLayer/bin/Debug/net9.0/SharedLayer.dll
+/home/amirhosein/RiderProjects/MessageHub/SharedLayer/bin/Debug/net9.0/SharedLayer.pdb
+/home/amirhosein/RiderProjects/MessageHub/SharedLayer/obj/Debug/net9.0/SharedLayer.GeneratedMSBuildEditorConfig.editorconfig
+/home/amirhosein/RiderProjects/MessageHub/SharedLayer/obj/Debug/net9.0/SharedLayer.AssemblyInfoInputs.cache
+/home/amirhosein/RiderProjects/MessageHub/SharedLayer/obj/Debug/net9.0/SharedLayer.AssemblyInfo.cs
+/home/amirhosein/RiderProjects/MessageHub/SharedLayer/obj/Debug/net9.0/SharedLayer.csproj.CoreCompileInputs.cache
+/home/amirhosein/RiderProjects/MessageHub/SharedLayer/obj/Debug/net9.0/SharedLayer.sourcelink.json
+/home/amirhosein/RiderProjects/MessageHub/SharedLayer/obj/Debug/net9.0/SharedLayer.dll
+/home/amirhosein/RiderProjects/MessageHub/SharedLayer/obj/Debug/net9.0/refint/SharedLayer.dll
+/home/amirhosein/RiderProjects/MessageHub/SharedLayer/obj/Debug/net9.0/SharedLayer.pdb
+/home/amirhosein/RiderProjects/MessageHub/SharedLayer/obj/Debug/net9.0/ref/SharedLayer.dll

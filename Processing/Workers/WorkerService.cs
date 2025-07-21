@@ -30,6 +30,8 @@ public class WorkerService : BackgroundService
         });
 
         Console.WriteLine("Sending message...");
+        
+        // listen to server messages :
     }
 
 

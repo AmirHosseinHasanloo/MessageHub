@@ -995,19 +995,19 @@
     ]
   },
   "packageFolders": {
-    "/home/amirhossein/.nuget/packages/": {}
+    "/home/amirhosein/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/amirhossein/RiderProjects/MessageHub/Processing/Processing.csproj",
+      "projectUniqueName": "/home/amirhosein/RiderProjects/MessageHub/Processing/Processing.csproj",
       "projectName": "Processing",
-      "projectPath": "/home/amirhossein/RiderProjects/MessageHub/Processing/Processing.csproj",
-      "packagesPath": "/home/amirhossein/.nuget/packages/",
-      "outputPath": "/home/amirhossein/RiderProjects/MessageHub/Processing/obj/",
+      "projectPath": "/home/amirhosein/RiderProjects/MessageHub/Processing/Processing.csproj",
+      "packagesPath": "/home/amirhosein/.nuget/packages/",
+      "outputPath": "/home/amirhosein/RiderProjects/MessageHub/Processing/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/amirhossein/.nuget/NuGet/NuGet.Config"
+        "/home/amirhosein/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -1020,8 +1020,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "/home/amirhossein/RiderProjects/MessageHub/Messaging.Grpc/Messaging.Grpc.csproj": {
-              "projectPath": "/home/amirhossein/RiderProjects/MessageHub/Messaging.Grpc/Messaging.Grpc.csproj"
+            "/home/amirhosein/RiderProjects/MessageHub/Messaging.Grpc/Messaging.Grpc.csproj": {
+              "projectPath": "/home/amirhosein/RiderProjects/MessageHub/Messaging.Grpc/Messaging.Grpc.csproj"
             }
           }
         }
@@ -1073,7 +1073,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.108/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.106/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

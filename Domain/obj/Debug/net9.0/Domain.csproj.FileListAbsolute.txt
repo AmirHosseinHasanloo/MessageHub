@@ -9,3 +9,15 @@
 /home/amirhossein/RiderProjects/MessageHub/Domain/obj/Debug/net9.0/refint/Domain.dll
 /home/amirhossein/RiderProjects/MessageHub/Domain/obj/Debug/net9.0/Domain.pdb
 /home/amirhossein/RiderProjects/MessageHub/Domain/obj/Debug/net9.0/ref/Domain.dll
+/home/amirhosein/RiderProjects/MessageHub/Domain/bin/Debug/net9.0/Domain.deps.json
+/home/amirhosein/RiderProjects/MessageHub/Domain/bin/Debug/net9.0/Domain.dll
+/home/amirhosein/RiderProjects/MessageHub/Domain/bin/Debug/net9.0/Domain.pdb
+/home/amirhosein/RiderProjects/MessageHub/Domain/obj/Debug/net9.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/amirhosein/RiderProjects/MessageHub/Domain/obj/Debug/net9.0/Domain.AssemblyInfoInputs.cache
+/home/amirhosein/RiderProjects/MessageHub/Domain/obj/Debug/net9.0/Domain.AssemblyInfo.cs
+/home/amirhosein/RiderProjects/MessageHub/Domain/obj/Debug/net9.0/Domain.csproj.CoreCompileInputs.cache
+/home/amirhosein/RiderProjects/MessageHub/Domain/obj/Debug/net9.0/Domain.sourcelink.json
+/home/amirhosein/RiderProjects/MessageHub/Domain/obj/Debug/net9.0/Domain.dll
+/home/amirhosein/RiderProjects/MessageHub/Domain/obj/Debug/net9.0/refint/Domain.dll
+/home/amirhosein/RiderProjects/MessageHub/Domain/obj/Debug/net9.0/Domain.pdb
+/home/amirhosein/RiderProjects/MessageHub/Domain/obj/Debug/net9.0/ref/Domain.dll

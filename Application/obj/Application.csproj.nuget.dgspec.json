@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/amirhossein/RiderProjects/MessageHub/Application/Application.csproj": {}
+    "/home/amirhosein/RiderProjects/MessageHub/Application/Application.csproj": {}
   },
   "projects": {
-    "/home/amirhossein/RiderProjects/MessageHub/Application/Application.csproj": {
+    "/home/amirhosein/RiderProjects/MessageHub/Application/Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/amirhossein/RiderProjects/MessageHub/Application/Application.csproj",
+        "projectUniqueName": "/home/amirhosein/RiderProjects/MessageHub/Application/Application.csproj",
         "projectName": "Application",
-        "projectPath": "/home/amirhossein/RiderProjects/MessageHub/Application/Application.csproj",
-        "packagesPath": "/home/amirhossein/.nuget/packages/",
-        "outputPath": "/home/amirhossein/RiderProjects/MessageHub/Application/obj/",
+        "projectPath": "/home/amirhosein/RiderProjects/MessageHub/Application/Application.csproj",
+        "packagesPath": "/home/amirhosein/.nuget/packages/",
+        "outputPath": "/home/amirhosein/RiderProjects/MessageHub/Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/amirhossein/.nuget/NuGet/NuGet.Config"
+          "/home/amirhosein/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -27,8 +27,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/home/amirhossein/RiderProjects/MessageHub/Domain/Domain.csproj": {
-                "projectPath": "/home/amirhossein/RiderProjects/MessageHub/Domain/Domain.csproj"
+              "/home/amirhosein/RiderProjects/MessageHub/Domain/Domain.csproj": {
+                "projectPath": "/home/amirhosein/RiderProjects/MessageHub/Domain/Domain.csproj"
               }
             }
           }
@@ -64,21 +64,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.108/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.106/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/amirhossein/RiderProjects/MessageHub/Domain/Domain.csproj": {
+    "/home/amirhosein/RiderProjects/MessageHub/Domain/Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/amirhossein/RiderProjects/MessageHub/Domain/Domain.csproj",
+        "projectUniqueName": "/home/amirhosein/RiderProjects/MessageHub/Domain/Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "/home/amirhossein/RiderProjects/MessageHub/Domain/Domain.csproj",
-        "packagesPath": "/home/amirhossein/.nuget/packages/",
-        "outputPath": "/home/amirhossein/RiderProjects/MessageHub/Domain/obj/",
+        "projectPath": "/home/amirhosein/RiderProjects/MessageHub/Domain/Domain.csproj",
+        "packagesPath": "/home/amirhosein/.nuget/packages/",
+        "outputPath": "/home/amirhosein/RiderProjects/MessageHub/Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/amirhossein/.nuget/NuGet/NuGet.Config"
+          "/home/amirhosein/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -124,7 +124,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.108/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.106/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
