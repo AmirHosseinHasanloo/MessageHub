@@ -1,0 +1,2 @@
+obj\Debug\net9.0/Message.cs \
+obj\Debug\net9.0/MessageGrpc.cs: ../Messaging.Grpc/Protos/message.proto

@@ -1,19 +1,25 @@
+﻿using Messaging.Protos;
 using SharedLayer.Contracts;
-
+using SharedLayer.Contracts.MessageDTOs;
+using System.Collections.Concurrent;
 namespace Messaging.Queues;
+
 
 public class QueueSimulator
 {
-    private static Random _random = new();
+    private readonly ConcurrentQueue<RawMessageDto> _messages = new();
 
-    public async Task<Message> GetNextMessageAsync()
+    public void DoEnqueue(RawMessageDto message)
     {
-        await Task.Delay(200);
-        return new Message()
-        {
-            Id = _random.Next(1, 9999),
-            Sender = _random.Next(2) == 0 ? "Legal" : "User",
-            Content = "Test Content" + Guid.NewGuid().ToString("N"),
-        };
+        if (message is not null)
+            _messages.Enqueue(message);
+    }
+
+    public Task<RawMessageDto> GetNextMessageAsync()
+    {
+        if (_messages.TryDequeue(out var message))
+            return Task.FromResult(message);
+
+        return Task.FromResult<RawMessageDto>(null);
     }
 }

@@ -1,0 +1,1 @@
+C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Messaging.Grpc\obj\Debug\net9.0\staticwebassets.build.json

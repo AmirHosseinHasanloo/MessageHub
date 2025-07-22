@@ -1,10 +1,15 @@
-using System.Security.AccessControl;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Messaging.gRPC;
-
-public class HealthState
+namespace Messaging.Services
 {
-    public bool IsEnabled { get; set; } = true;
-    public int MaxClients { get; set; } = 5;
-    public DateTime ExpirationTime { get; set; } = DateTime.UtcNow.AddMinutes(10);
+    public class HealthState
+    {
+        public bool IsEnabled { get; set; }
+        public int MaxClients { get; set; }
+        public DateTime ExpirationTime { get; set; } = DateTime.UtcNow.AddMinutes(10);
+    }
 }

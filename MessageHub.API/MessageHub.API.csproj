@@ -8,14 +8,25 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="9.0.7" />
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.7"/>
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.7" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
         <PackageReference Include="Newtonsoft.Json.Bson" Version="1.0.3" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.3" />
     </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Google.Protobuf" Version="3.31.1" />
+		<PackageReference Include="Grpc.Net.Client" Version="2.71.0" />
+		<PackageReference Include="Grpc.Tools" Version="2.72.0" />
+		<PackageReference Include="Grpc.Core" Version="2.46.6" />
+	</ItemGroup>
 
+	<ItemGroup>
+		<protobuf Include="..\Messaging.Grpc\Protos\message_stream.proto" GrpcServices="Client" />
+		<Protobuf Include="..\Messaging.Grpc\Protos\message.proto" GrpcServices="Client" />
+	</ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\Application\Application.csproj" />
+      <ProjectReference Include="..\Messaging.Grpc\Messaging.Grpc.csproj" />
       <ProjectReference Include="..\Messaging\Messaging.csproj" />
     </ItemGroup>
 

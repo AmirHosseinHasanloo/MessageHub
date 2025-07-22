@@ -21,3 +21,16 @@
 /home/amirhosein/RiderProjects/MessageHub/SharedLayer/obj/Debug/net9.0/refint/SharedLayer.dll
 /home/amirhosein/RiderProjects/MessageHub/SharedLayer/obj/Debug/net9.0/SharedLayer.pdb
 /home/amirhosein/RiderProjects/MessageHub/SharedLayer/obj/Debug/net9.0/ref/SharedLayer.dll
+C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\SharedLayer\bin\Debug\net9.0\SharedLayer.deps.json
+C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\SharedLayer\bin\Debug\net9.0\SharedLayer.dll
+C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\SharedLayer\bin\Debug\net9.0\SharedLayer.pdb
+C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\SharedLayer\obj\Debug\net9.0\SharedLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\SharedLayer\obj\Debug\net9.0\SharedLayer.AssemblyInfoInputs.cache
+C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\SharedLayer\obj\Debug\net9.0\SharedLayer.AssemblyInfo.cs
+C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\SharedLayer\obj\Debug\net9.0\SharedLayer.csproj.CoreCompileInputs.cache
+C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\SharedLayer\obj\Debug\net9.0\SharedLayer.sourcelink.json
+C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\SharedLayer\obj\Debug\net9.0\SharedLayer.dll
+C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\SharedLayer\obj\Debug\net9.0\refint\SharedLayer.dll
+C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\SharedLayer\obj\Debug\net9.0\SharedLayer.pdb
+C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\SharedLayer\obj\Debug\net9.0\ref\SharedLayer.dll
+C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\SharedLayer\obj\Debug\net9.0\SharedLayer.csproj.AssemblyReference.cache

@@ -1,12 +1,1 @@
-{
-  "Version": 1,
-  "Hash": "u7m3NeRtZB4UkfNGiI/LGw/Pe5uCsUDA/+2TUTfDOuA=",
-  "Source": "Messaging.Grpc",
-  "BasePath": "_content/Messaging.Grpc",
-  "Mode": "Default",
-  "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
-}
+{"Version":1,"Hash":"u7m3NeRtZB4UkfNGiI/LGw/Pe5uCsUDA/+2TUTfDOuA=","Source":"Messaging.Grpc","BasePath":"_content/Messaging.Grpc","Mode":"Default","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}

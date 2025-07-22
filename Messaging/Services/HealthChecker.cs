@@ -1,44 +1,43 @@
-using System.Net.Http.Json;
 using Domain;
+using Messaging.EventHandler;
+using Messaging.Services;
 using Microsoft.Extensions.Logging;
+using System.Net.Http.Json;
 
-namespace Messaging.gRPC;
-
-public class HealthChecker
+namespace Messaging.Services;
+public class HealthChecker : IDisposable
 {
     private readonly HttpClient _httpClient;
     private readonly string _healthUrl;
-    private readonly string _Id;
-    private readonly Timer _timer;
-    private readonly HealthState _state = new();
+    private readonly string _id;
     private readonly ILogger<HealthChecker> _logger;
+    private readonly ClientManager _clientManager;
+    private Timer _timer;
+    private HealthCheckResponse _currentState = new();
 
-    public HealthChecker(HttpClient httpClient, string healthUrl, string id)
+    public HealthChecker(HttpClient httpClient, string healthUrl, string id, ILogger<HealthChecker> logger, ClientManager clientManager)
     {
         _httpClient = httpClient;
         _healthUrl = healthUrl;
-        _Id = id;
-        // Schedule periodic check +=>
+        _id = id;
+        _logger = logger;
+        _clientManager = clientManager;
+
         _timer = new Timer(async _ => await CheckHealthAsync(), null, TimeSpan.Zero, TimeSpan.FromSeconds(30));
     }
 
-    public HealthChecker(Logger<HealthChecker> logger)
-    {
-        _logger = logger;
-    }
-
-    public HealthState GetCurrentState() => _state;
+    public HealthCheckResponse GetCurrentState() => _currentState;
 
     private async Task CheckHealthAsync()
     {
         var request = new HealthCheckRequest
         {
-            Id = _Id,
+            Id = _id,
             SystemTime = DateTime.UtcNow,
-            NumberOfConnectedClients = 5
+            NumberOfConnectedClients = _clientManager.GetActiveCount()
         };
 
-        for (int attempt = 0; attempt < 5; attempt++)
+        for (int attempt = 1; attempt <= 5; attempt++)
         {
             try
             {
@@ -46,25 +45,32 @@ public class HealthChecker
                 if (response.IsSuccessStatusCode)
                 {
                     var body = await response.Content.ReadFromJsonAsync<HealthCheckResponse>();
-
-                    if (body is not null)
+                    if (body != null)
                     {
-                        _state.IsEnabled = body.IsEnabled;
-                        _state.MaxClients = body.NumberOfActiveClients;
-                        _state.ExpirationTime = body.ExpirationTime;
+                        _currentState = body;
+                        _logger.LogInformation($"Health check success: IsEnabled={body.IsEnabled}, ActiveClients={body.NumberOfActiveClients}");
+                        return;
                     }
-
-                    return;
+                }
+                else
+                {
+                    _logger.LogWarning($"Health check failed with status code {response.StatusCode}. Attempt {attempt}/5");
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                _logger.LogError($"there is an Exception, with this detial : {e.Message}");
+                _logger.LogError($"Health check exception: {ex.Message}. Attempt {attempt}/5");
             }
 
             await Task.Delay(TimeSpan.FromSeconds(10));
         }
 
-        _state.IsEnabled = false;
+        _currentState.IsEnabled = false;
+        _logger.LogError("Health check failed 5 times. Service will be disabled.");
+    }
+
+    public void Dispose()
+    {
+        _timer?.Dispose();
     }
 }

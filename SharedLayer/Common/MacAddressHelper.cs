@@ -1,16 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.NetworkInformation;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace SharedLayer.Common;
-
-public static class MacAddressHelper
+namespace SharedLayer.Common
 {
-    public static string GenerateGuid()
+    public static class MacAddressHelper
     {
-        var mac = NetworkInterface.GetAllNetworkInterfaces()
-            .FirstOrDefault(_ => _.OperationalStatus == OperationalStatus.Up)?
-            .GetPhysicalAddress()
-            .ToString();
+        public static string GenerateStableId()
+        {
+            var mac = NetworkInterface
+                .GetAllNetworkInterfaces()
+                .FirstOrDefault(nic =>
+                    nic.NetworkInterfaceType != NetworkInterfaceType.Loopback &&
+                    nic.OperationalStatus == OperationalStatus.Up)?
+                .GetPhysicalAddress()
+                .ToString();
 
-        return Guid.NewGuid().ToString() + mac;
+            return string.IsNullOrWhiteSpace(mac)
+                ? Guid.NewGuid().ToString()
+                : CreateGuidFromString(mac).ToString();
+        }
+
+        private static Guid CreateGuidFromString(string input)
+        {
+            using var provider = System.Security.Cryptography.MD5.Create();
+            var hash = provider.ComputeHash(System.Text.Encoding.UTF8.GetBytes(input));
+            return new Guid(hash);
+        }
     }
 }

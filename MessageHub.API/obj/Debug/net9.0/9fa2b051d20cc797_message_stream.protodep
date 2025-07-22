@@ -1,0 +1,2 @@
+obj\Debug\net9.0/MessageStream.cs \
+obj\Debug\net9.0/MessageStreamGrpc.cs: ../Messaging.Grpc/Protos/message_stream.proto

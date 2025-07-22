@@ -1,34 +1,39 @@
 {
   "format": 1,
   "restore": {
-    "/home/amirhosein/RiderProjects/MessageHub/Application/Application.csproj": {}
+    "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Application\\Application.csproj": {}
   },
   "projects": {
-    "/home/amirhosein/RiderProjects/MessageHub/Application/Application.csproj": {
+    "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/amirhosein/RiderProjects/MessageHub/Application/Application.csproj",
+        "projectUniqueName": "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "/home/amirhosein/RiderProjects/MessageHub/Application/Application.csproj",
-        "packagesPath": "/home/amirhosein/.nuget/packages/",
-        "outputPath": "/home/amirhosein/RiderProjects/MessageHub/Application/obj/",
+        "projectPath": "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\hassanloo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/amirhosein/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\hassanloo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "/usr/lib/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/home/amirhosein/RiderProjects/MessageHub/Domain/Domain.csproj": {
-                "projectPath": "/home/amirhosein/RiderProjects/MessageHub/Domain/Domain.csproj"
+              "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Domain\\Domain.csproj"
               }
             }
           }
@@ -43,7 +48,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -64,27 +69,32 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.106/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/amirhosein/RiderProjects/MessageHub/Domain/Domain.csproj": {
+    "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/amirhosein/RiderProjects/MessageHub/Domain/Domain.csproj",
+        "projectUniqueName": "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "/home/amirhosein/RiderProjects/MessageHub/Domain/Domain.csproj",
-        "packagesPath": "/home/amirhosein/.nuget/packages/",
-        "outputPath": "/home/amirhosein/RiderProjects/MessageHub/Domain/obj/",
+        "projectPath": "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\hassanloo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/amirhosein/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\hassanloo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "/usr/lib/dotnet/library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -103,7 +113,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -124,7 +134,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.106/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

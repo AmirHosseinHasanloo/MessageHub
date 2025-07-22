@@ -1,4 +1,4 @@
-using Grpc.Core;
+﻿using Grpc.Core;
 using Messaging.Protos;
 using Messaging.Queues;
 
@@ -26,19 +26,27 @@ public class MessagingService : MessageStream.MessageStreamBase
 
             if (message.Type == "Request")
             {
-                var newMsg = await _queueSimulator.GetNextMessageAsync();
+                var dto = await _queueSimulator.GetNextMessageAsync();
 
-                var envelop = new MessageEnvelope
+                if (dto is not null)
                 {
-                    Type = "Payload",
-                    MessageId = newMsg.Id,
-                    Message = newMsg.Content,
-                    Engine = "RegexEngine",
-                    Id = message.Id,
-                };
+                    var envelope = new MessageEnvelope
+                    {
+                        Type = "Payload",
+                        Id = message.Id, // همون آیدی کلاینت فرستنده
+                        Engine = "RegexEngine",
+                        MessageId = dto.Id,
+                        Message = dto.Message // ✅ اسم درست خاصیت Content هست، نه Message
+                    };
 
-                await responseStream.WriteAsync(envelop);
+                    await responseStream.WriteAsync(envelope);
+                }
+                else
+                {
+                    Console.WriteLine("📭 صف پیام خالی بود، پیامی ارسال نشد.");
+                }
             }
+
 
             if (message.Type == "Response")
             {

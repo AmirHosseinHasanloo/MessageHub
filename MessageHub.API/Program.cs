@@ -1,8 +1,8 @@
-using Application;
-using Messaging.gRPC;
+using Messaging.Services;
 using System.Net.NetworkInformation;
 using Messaging.EventHandler;
 using SharedLayer.Common;
+using Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,16 +15,30 @@ builder.Services.AddControllers(options => { options.ReturnHttpNotAcceptable = t
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddHttpClient<HealthChecker>();
+builder.Services.AddHttpClient<HealthChecker>(client =>
+{
+    client.BaseAddress = new Uri("https://localhost:7159");
+});
 
-builder.Services.AddSingleton(new HealthChecker(
-    new HttpClient(),
-    "https://localhost:7159/api/module/health",
-    MacAddressHelper.GenerateGuid()
-));
+builder.Services.AddHttpClient<HealthChecker>();
+builder.Services.AddSingleton<HealthChecker>(sp =>
+{
+    var httpClient = sp.GetRequiredService<HttpClient>();
+    var logger = sp.GetRequiredService<ILogger<HealthChecker>>();
+    var clientManager = sp.GetRequiredService<ClientManager>();
+    var id = MacAddressHelper.GenerateStableId();
+    var healthUrl = "https://localhost:7159/api/module/health";
+    return new HealthChecker(httpClient, healthUrl, id, logger, clientManager);
+});
+
+
+
+builder.Services.AddLogging();
 
 builder.Services.AddSingleton<ClientManager>();
+builder.Services.AddHostedService<ClientCleanupService>();
 #region DI Container
+
 
 builder.Services.AddScoped<IHealthCheckService, HealthCheckService>();
 
