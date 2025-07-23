@@ -432,6 +432,19 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
+      "Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Application.dll": {}
+        }
+      },
       "Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -440,6 +453,22 @@
         },
         "runtime": {
           "bin/placeholder/Core.dll": {}
+        }
+      },
+      "Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Application": "1.0.0",
+          "Core": "1.0.0",
+          "Messaging": "1.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.7"
+        },
+        "compile": {
+          "bin/placeholder/Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Infrastructure.dll": {}
         }
       },
       "Messaging/1.0.0": {
@@ -1178,10 +1207,20 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Application/1.0.0": {
+      "type": "project",
+      "path": "../Application/Application.csproj",
+      "msbuildProject": "../Application/Application.csproj"
+    },
     "Core/1.0.0": {
       "type": "project",
       "path": "../Domain/Core.csproj",
       "msbuildProject": "../Domain/Core.csproj"
+    },
+    "Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Infrastructure/Infrastructure.csproj",
+      "msbuildProject": "../Infrastructure/Infrastructure.csproj"
     },
     "Messaging/1.0.0": {
       "type": "project",
@@ -1198,6 +1237,7 @@
     "net9.0": [
       "Core >= 1.0.0",
       "Grpc.AspNetCore >= 2.64.0",
+      "Infrastructure >= 1.0.0",
       "Messaging >= 1.0.0"
     ]
   },
@@ -1235,6 +1275,9 @@
           "projectReferences": {
             "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Domain\\Core.csproj": {
               "projectPath": "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Domain\\Core.csproj"
+            },
+            "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Infrastructure\\Infrastructure.csproj"
             },
             "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Messaging\\Messaging.csproj": {
               "projectPath": "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Messaging\\Messaging.csproj"

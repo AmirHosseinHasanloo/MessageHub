@@ -682,6 +682,7 @@
         "dependencies": {
           "Core": "1.0.0",
           "Grpc.AspNetCore": "2.64.0",
+          "Infrastructure": "1.0.0",
           "Messaging": "1.0.0"
         },
         "compile": {
