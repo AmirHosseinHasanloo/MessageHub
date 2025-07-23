@@ -1,13 +1,9 @@
-using System.ComponentModel;
 using System.Net.NetworkInformation;
 using System.Text.RegularExpressions;
 using Grpc.Net.Client;
-using Messaging.Grpc.Services;
 using Messaging.Protos;
 using Microsoft.Extensions.Hosting;
 using SharedLayer.Common;
-using Google.Protobuf;
-using SharedLayer.Contracts;
 using Grpc.Core;
 namespace Processing.Workers;
 
@@ -33,32 +29,35 @@ public class RegexEngineWorker : BackgroundService
 
         Console.WriteLine("Sent Introduction message");
 
-        // ???? ????? ?? ???? Raw ?????????:
-        await call.RequestStream.WriteAsync(new MessageExchange
-        {
-            Raw = new RawMessage
-            {
-                Id = 1,
-                Sender = "RegexEngineWorker",
-                Message = "Hello 123 from RegexEngine!"
-            }
-        });
 
         Console.WriteLine("Sent RawMessage");
 
-        // ?????? ???????:
         await foreach (var response in call.ResponseStream.ReadAllAsync(stoppingToken))
         {
-            if (response.PayloadCase == MessageExchange.PayloadOneofCase.Result)
+            if (response.PayloadCase == MessageExchange.PayloadOneofCase.Raw)
             {
-                Console.WriteLine($" Received ProcessedMessage with ID {response.Result.Id}");
-                Console.WriteLine($" Valid: {response.Result.IsValid}");
-                Console.WriteLine($" Length: {response.Result.MessageLength}");
+                var raw = response.Raw;
+                Console.WriteLine($"[Recived] ID:{raw.Id}, Msg: {raw.Message}");
 
-                foreach (var kv in response.Result.RegexResults)
+                var result = new ProcessedMessage()
                 {
-                    Console.WriteLine($"    Regex '{kv.Key}': {kv.Value}");
-                }
+                    Id = raw.Id,
+                    Engine = "Regex Engine",
+                    IsValid = raw.Message.Length > 0,
+                    MessageLength = raw.Message.Length,
+                };
+
+                var matches = Regex.Matches(raw.Message, @"\d+");
+                bool hasNumbers = matches.Count > 0;
+
+                result.RegexResults.Add("Numbers", hasNumbers);
+
+                await call.RequestStream.WriteAsync(new MessageExchange
+                {
+                    Result = result
+                });
+
+                Console.WriteLine($"[sent] Processed Message ID: {result.Id}");
             }
         }
     }

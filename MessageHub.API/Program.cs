@@ -2,7 +2,8 @@ using Messaging.Services;
 using System.Net.NetworkInformation;
 using Messaging.EventHandler;
 using SharedLayer.Common;
-using Application;
+using Application.Contracts;
+using Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 

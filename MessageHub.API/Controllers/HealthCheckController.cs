@@ -1,5 +1,5 @@
-﻿using Application;
-using Domain;
+﻿using Application.Contracts;
+using Core.Domain.HealthCheckDTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

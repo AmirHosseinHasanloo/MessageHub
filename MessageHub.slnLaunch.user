@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "MessageHub.API\\MessageHub.API.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Messaging.Grpc\\Messaging.Grpc.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

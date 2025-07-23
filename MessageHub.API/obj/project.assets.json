@@ -621,7 +621,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
-          "Domain": "1.0.0"
+          "Core": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Application.dll": {}
@@ -630,21 +630,37 @@
           "bin/placeholder/Application.dll": {}
         }
       },
-      "Domain/1.0.0": {
+      "Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "compile": {
-          "bin/placeholder/Domain.dll": {}
+          "bin/placeholder/Core.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Domain.dll": {}
+          "bin/placeholder/Core.dll": {}
+        }
+      },
+      "Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Application": "1.0.0",
+          "Core": "1.0.0",
+          "Messaging": "1.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.7"
+        },
+        "compile": {
+          "bin/placeholder/Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Infrastructure.dll": {}
         }
       },
       "Messaging/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
-          "Domain": "1.0.0",
+          "Core": "1.0.0",
           "Google.Protobuf": "3.31.1",
           "Grpc.Core": "2.46.6",
           "Grpc.Net.Client": "2.71.0",
@@ -664,7 +680,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
-          "Domain": "1.0.0",
+          "Core": "1.0.0",
           "Grpc.AspNetCore": "2.64.0",
           "Messaging": "1.0.0"
         },
@@ -1911,10 +1927,15 @@
       "path": "../Application/Application.csproj",
       "msbuildProject": "../Application/Application.csproj"
     },
-    "Domain/1.0.0": {
+    "Core/1.0.0": {
       "type": "project",
-      "path": "../Domain/Domain.csproj",
-      "msbuildProject": "../Domain/Domain.csproj"
+      "path": "../Domain/Core.csproj",
+      "msbuildProject": "../Domain/Core.csproj"
+    },
+    "Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Infrastructure/Infrastructure.csproj",
+      "msbuildProject": "../Infrastructure/Infrastructure.csproj"
     },
     "Messaging/1.0.0": {
       "type": "project",
@@ -1939,6 +1960,7 @@
       "Grpc.Core >= 2.46.6",
       "Grpc.Net.Client >= 2.71.0",
       "Grpc.Tools >= 2.72.0",
+      "Infrastructure >= 1.0.0",
       "Messaging >= 1.0.0",
       "Messaging.Grpc >= 1.0.0",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 9.0.7",
@@ -1982,6 +2004,9 @@
           "projectReferences": {
             "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Application\\Application.csproj": {
               "projectPath": "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Application\\Application.csproj"
+            },
+            "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Infrastructure\\Infrastructure.csproj"
             },
             "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Messaging.Grpc\\Messaging.Grpc.csproj": {
               "projectPath": "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Messaging.Grpc\\Messaging.Grpc.csproj"

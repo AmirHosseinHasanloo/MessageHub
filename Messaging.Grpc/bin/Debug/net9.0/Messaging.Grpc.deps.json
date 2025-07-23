@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v9.0": {
       "Messaging.Grpc/1.0.0": {
         "dependencies": {
-          "Domain": "1.0.0",
+          "Core": "1.0.0",
           "Grpc.AspNetCore": "2.64.0",
           "Messaging": "1.0.0"
         },
@@ -255,9 +255,9 @@
       },
       "System.Memory/4.5.3": {},
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
-      "Domain/1.0.0": {
+      "Core/1.0.0": {
         "runtime": {
-          "Domain.dll": {
+          "Core.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -265,7 +265,7 @@
       },
       "Messaging/1.0.0": {
         "dependencies": {
-          "Domain": "1.0.0",
+          "Core": "1.0.0",
           "Google.Protobuf": "3.31.1",
           "Grpc.Core": "2.46.6",
           "Grpc.Net.Client": "2.71.0",
@@ -471,7 +471,7 @@
       "path": "system.runtime.compilerservices.unsafe/6.0.0",
       "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
     },
-    "Domain/1.0.0": {
+    "Core/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

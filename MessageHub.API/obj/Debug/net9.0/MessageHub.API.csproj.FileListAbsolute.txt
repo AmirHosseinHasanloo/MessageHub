@@ -85,12 +85,10 @@ C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\MessageHub.API\bi
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\MessageHub.API\bin\Debug\net9.0\runtimes\win-x64\native\grpc_csharp_ext.x64.dll
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\MessageHub.API\bin\Debug\net9.0\runtimes\win-x86\native\grpc_csharp_ext.x86.dll
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\MessageHub.API\bin\Debug\net9.0\Application.dll
-C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\MessageHub.API\bin\Debug\net9.0\Domain.dll
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\MessageHub.API\bin\Debug\net9.0\Messaging.dll
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\MessageHub.API\bin\Debug\net9.0\SharedLayer.dll
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\MessageHub.API\bin\Debug\net9.0\Application.pdb
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\MessageHub.API\bin\Debug\net9.0\Messaging.pdb
-C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\MessageHub.API\bin\Debug\net9.0\Domain.pdb
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\MessageHub.API\bin\Debug\net9.0\SharedLayer.pdb
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\MessageHub.API\obj\Debug\net9.0\MessageHub.API.csproj.AssemblyReference.cache
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\MessageHub.API\obj\Debug\net9.0\rpswa.dswa.cache.json
@@ -131,3 +129,7 @@ C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\MessageHub.API\bi
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\MessageHub.API\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\MessageHub.API\bin\Debug\net9.0\Messaging.Grpc.dll
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\MessageHub.API\bin\Debug\net9.0\Messaging.Grpc.pdb
+C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\MessageHub.API\bin\Debug\net9.0\Core.dll
+C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\MessageHub.API\bin\Debug\net9.0\Core.pdb
+C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\MessageHub.API\bin\Debug\net9.0\Infrastructure.dll
+C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\MessageHub.API\bin\Debug\net9.0\Infrastructure.pdb

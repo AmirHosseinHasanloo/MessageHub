@@ -1,0 +1,34 @@
+[
+  {
+    "ContainingType": "MessageHub.API.Controllers.HealthCheckController",
+    "Method": "CheckHealth",
+    "RelativePath": "api/HealthCheck/health",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Domain.HealthCheckRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MessageHub.API.Controllers.MessagesController",
+    "Method": "SendMessage",
+    "RelativePath": "api/messages/send",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SharedLayer.Contracts.MessageDTOs.RawMessageDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

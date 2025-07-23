@@ -20,7 +20,8 @@ public class MessageExchangeService : MessageChangeStream.MessageChangeStreamBas
         _clientManager = clientManager;
     }
 
-    public override async Task Communicate(IAsyncStreamReader<MessageExchange> requestStream, IServerStreamWriter<MessageExchange> responseStream, ServerCallContext context)
+    public override async Task Communicate(IAsyncStreamReader<MessageExchange> requestStream,
+        IServerStreamWriter<MessageExchange> responseStream, ServerCallContext context)
     {
         // ????? ?????? ???? ????? (Intro)
         if (!await requestStream.MoveNext())
@@ -47,21 +48,14 @@ public class MessageExchangeService : MessageChangeStream.MessageChangeStreamBas
             {
                 _clientManager.MarkClientActive(clientId);
 
-                // ????? ????? ????? ?? ?????
                 var healthState = _healthChecker.GetCurrentState();
                 if (!healthState.IsEnabled)
-                {
-                    // ????? ??? ???? ???? ??? ??????
                     break;
-                }
 
-                // ?????? ???? Raw
                 if (message.PayloadCase == MessageExchange.PayloadOneofCase.Raw)
                 {
-                    // ????? ?????? ???? ?? ?? ?? ????? ??? ?? ?????? ???? ???
                     var rawMsg = message.Raw;
 
-                    // ????? ?? ????? ?????? ??? ???? ?? ?????? ???? ?????
                     var processed = new MessageExchange
                     {
                         Result = new ProcessedMessage
@@ -74,13 +68,27 @@ public class MessageExchangeService : MessageChangeStream.MessageChangeStreamBas
                         }
                     };
 
-                    // ???? ?? ????? ?????? ?? ??????
                     if (_activeClients.TryGetValue(clientId, out var clientStream))
                     {
                         await clientStream.WriteAsync(processed);
                     }
                 }
+                else if (message.PayloadCase == MessageExchange.PayloadOneofCase.Result)
+                {
+                    var result = message.Result;
+
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine($"[Result] ID: {result.Id}, Length: {result.MessageLength}, IsValid: {result.IsValid}");
+
+                    foreach (var kv in result.RegexResults)
+                    {
+                        Console.WriteLine($" - {kv.Key} : {kv.Value}");
+                    }
+
+                    Console.ResetColor();
+                }
             }
+
         }
         finally
         {

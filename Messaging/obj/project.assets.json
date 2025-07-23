@@ -268,14 +268,14 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
-      "Domain/1.0.0": {
+      "Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "compile": {
-          "bin/placeholder/Domain.dll": {}
+          "bin/placeholder/Core.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Domain.dll": {}
+          "bin/placeholder/Core.dll": {}
         }
       },
       "SharedLayer/1.0.0": {
@@ -785,10 +785,10 @@
         "version.txt"
       ]
     },
-    "Domain/1.0.0": {
+    "Core/1.0.0": {
       "type": "project",
-      "path": "../Domain/Domain.csproj",
-      "msbuildProject": "../Domain/Domain.csproj"
+      "path": "../Domain/Core.csproj",
+      "msbuildProject": "../Domain/Core.csproj"
     },
     "SharedLayer/1.0.0": {
       "type": "project",
@@ -798,7 +798,7 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "Domain >= 1.0.0",
+      "Core >= 1.0.0",
       "Google.Protobuf >= 3.31.1",
       "Grpc.Core >= 2.46.6",
       "Grpc.Net.Client >= 2.71.0",
@@ -840,8 +840,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Domain\\Domain.csproj"
+            "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Domain\\Core.csproj": {
+              "projectPath": "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Domain\\Core.csproj"
             },
             "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\SharedLayer\\SharedLayer.csproj": {
               "projectPath": "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\SharedLayer\\SharedLayer.csproj"

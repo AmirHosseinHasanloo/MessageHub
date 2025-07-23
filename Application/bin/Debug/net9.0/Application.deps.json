@@ -8,15 +8,15 @@
     ".NETCoreApp,Version=v9.0": {
       "Application/1.0.0": {
         "dependencies": {
-          "Domain": "1.0.0"
+          "Core": "1.0.0"
         },
         "runtime": {
           "Application.dll": {}
         }
       },
-      "Domain/1.0.0": {
+      "Core/1.0.0": {
         "runtime": {
-          "Domain.dll": {
+          "Core.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -30,7 +30,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Domain/1.0.0": {
+    "Core/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

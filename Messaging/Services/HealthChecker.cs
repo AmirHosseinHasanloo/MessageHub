@@ -1,4 +1,4 @@
-using Domain;
+using Core.Domain.HealthCheckDTOs;
 using Messaging.EventHandler;
 using Messaging.Services;
 using Microsoft.Extensions.Logging;
