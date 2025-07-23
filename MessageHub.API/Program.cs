@@ -1,9 +1,12 @@
-using Messaging.Services;
-using System.Net.NetworkInformation;
-using Messaging.EventHandler;
-using SharedLayer.Common;
-using Application.Contracts;
+﻿using Application.Contracts;
 using Infrastructure;
+using Messaging.EventHandler;
+using Messaging.Grpc.Services;
+using Messaging.Services;
+using SharedLayer.Common;
+using System.Net.NetworkInformation;
+using Messaging.Protos; // یا namespace موجود در فایل .proto
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,6 +41,13 @@ builder.Services.AddLogging();
 
 builder.Services.AddSingleton<ClientManager>();
 builder.Services.AddHostedService<ClientCleanupService>();
+
+builder.Services.AddGrpcClient<MessageChangeStream.MessageChangeStreamClient>(options =>
+{
+    options.Address = new Uri("https://localhost:7199");
+});
+
+
 #region DI Container
 
 

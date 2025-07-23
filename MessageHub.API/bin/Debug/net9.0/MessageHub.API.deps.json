@@ -390,7 +390,9 @@
       "Infrastructure/1.0.0": {
         "dependencies": {
           "Application": "1.0.0",
-          "Core": "1.0.0"
+          "Core": "1.0.0",
+          "Messaging": "1.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.7"
         },
         "runtime": {
           "Infrastructure.dll": {
@@ -421,6 +423,7 @@
         "dependencies": {
           "Core": "1.0.0",
           "Grpc.AspNetCore": "2.64.0",
+          "Infrastructure": "1.0.0",
           "Messaging": "1.0.0"
         },
         "runtime": {

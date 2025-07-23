@@ -62,6 +62,18 @@ namespace Messaging.Protos {
       get { return global::Messaging.Protos.MessageReflection.Descriptor.Services[0]; }
     }
 
+    /// <summary>Base class for server-side implementations of MessageStream</summary>
+    [grpc::BindServiceMethod(typeof(MessageStream), "BindService")]
+    public abstract partial class MessageStreamBase
+    {
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task Communicate(grpc::IAsyncStreamReader<global::Messaging.Protos.MessageEnvelope> requestStream, grpc::IServerStreamWriter<global::Messaging.Protos.MessageEnvelope> responseStream, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+    }
+
     /// <summary>Client for MessageStream</summary>
     public partial class MessageStreamClient : grpc::ClientBase<MessageStreamClient>
     {
@@ -105,6 +117,25 @@ namespace Messaging.Protos {
       {
         return new MessageStreamClient(configuration);
       }
+    }
+
+    /// <summary>Creates service definition that can be registered with a server</summary>
+    /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public static grpc::ServerServiceDefinition BindService(MessageStreamBase serviceImpl)
+    {
+      return grpc::ServerServiceDefinition.CreateBuilder()
+          .AddMethod(__Method_Communicate, serviceImpl.Communicate).Build();
+    }
+
+    /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
+    /// Note: this method is part of an experimental API that can change or be removed without any prior notice.</summary>
+    /// <param name="serviceBinder">Service methods will be bound by calling <c>AddMethod</c> on this object.</param>
+    /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    public static void BindService(grpc::ServiceBinderBase serviceBinder, MessageStreamBase serviceImpl)
+    {
+      serviceBinder.AddMethod(__Method_Communicate, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::Messaging.Protos.MessageEnvelope, global::Messaging.Protos.MessageEnvelope>(serviceImpl.Communicate));
     }
 
   }

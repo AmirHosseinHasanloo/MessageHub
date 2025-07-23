@@ -36,7 +36,9 @@
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Messaging\bin\Debug\net9.0\Messaging.deps.json
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Messaging\bin\Debug\net9.0\Messaging.dll
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Messaging\bin\Debug\net9.0\Messaging.pdb
+C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Messaging\bin\Debug\net9.0\Core.dll
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Messaging\bin\Debug\net9.0\SharedLayer.dll
+C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Messaging\bin\Debug\net9.0\Core.pdb
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Messaging\bin\Debug\net9.0\SharedLayer.pdb
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Messaging\obj\Debug\net9.0\Messaging.csproj.AssemblyReference.cache
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Messaging\obj\Debug\net9.0\Messaging.GeneratedMSBuildEditorConfig.editorconfig
@@ -49,5 +51,3 @@ C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Messaging\obj\Deb
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Messaging\obj\Debug\net9.0\refint\Messaging.dll
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Messaging\obj\Debug\net9.0\Messaging.pdb
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Messaging\obj\Debug\net9.0\ref\Messaging.dll
-C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Messaging\bin\Debug\net9.0\Core.dll
-C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Messaging\bin\Debug\net9.0\Core.pdb

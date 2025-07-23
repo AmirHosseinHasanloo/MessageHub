@@ -1,6 +1,8 @@
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Application\bin\Debug\net9.0\Application.deps.json
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Application\bin\Debug\net9.0\Application.dll
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Application\bin\Debug\net9.0\Application.pdb
+C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Application\bin\Debug\net9.0\Core.dll
+C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Application\bin\Debug\net9.0\Core.pdb
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Application\obj\Debug\net9.0\Application.csproj.AssemblyReference.cache
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Application\obj\Debug\net9.0\Application.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Application\obj\Debug\net9.0\Application.AssemblyInfoInputs.cache
@@ -12,5 +14,3 @@ C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Application\obj\D
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Application\obj\Debug\net9.0\refint\Application.dll
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Application\obj\Debug\net9.0\Application.pdb
 C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Application\obj\Debug\net9.0\ref\Application.dll
-C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Application\bin\Debug\net9.0\Core.dll
-C:\Users\hassanloo\source\repos\AmirHosseinHasanloo\MessageHub\Application\bin\Debug\net9.0\Core.pdb

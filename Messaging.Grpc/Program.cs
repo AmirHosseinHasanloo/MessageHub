@@ -3,15 +3,16 @@ using Infrastructure;
 using Messaging.EventHandler;
 using Messaging.Grpc.Services;
 using Messaging.Queues;
+using Messaging.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddGrpc();
 builder.Services.AddSingleton<QueueSimulator>();
-builder.Services.AddHttpClient<GrpcHealthChecker>();
+builder.Services.AddHttpClient<HealthChecker>();
 builder.Services.AddSingleton<GrpcClientManager>();
-builder.Services.AddSingleton<IGrpcHealthChecker, GrpcHealthChecker>();
+builder.Services.AddScoped<IGrpcHealthChecker, GrpcHealthChecker>();
 
 
 var app = builder.Build();

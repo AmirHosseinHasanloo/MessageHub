@@ -1,52 +1,47 @@
+using Application.Contracts;
 using Grpc.Core;
 using Messaging.EventHandler;
 using Messaging.Protos;
 using Messaging.Services;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using System.Collections.Concurrent;
 
 namespace Messaging.Grpc.Services;
 
 public class MessageExchangeService : MessageChangeStream.MessageChangeStreamBase
 {
-    private readonly HealthChecker _healthChecker;
-    private readonly ClientManager _clientManager;
+    private readonly IGrpcHealthChecker _healthChecker;
+    private readonly GrpcClientManager _clientManager;
 
-    // ????? ?????????? ???? ?? ????? ???? ????? ??????
     private readonly ConcurrentDictionary<string, IServerStreamWriter<MessageExchange>> _activeClients = new();
 
-    public MessageExchangeService(HealthChecker healthChecker, ClientManager clientManager)
+    public MessageExchangeService(IGrpcHealthChecker healthChecker, GrpcClientManager clientManager)
     {
         _healthChecker = healthChecker;
         _clientManager = clientManager;
     }
 
+
     public override async Task Communicate(IAsyncStreamReader<MessageExchange> requestStream,
         IServerStreamWriter<MessageExchange> responseStream, ServerCallContext context)
     {
-        // ????? ?????? ???? ????? (Intro)
         if (!await requestStream.MoveNext())
             return;
 
         var intro = requestStream.Current.Intro;
         if (intro == null)
-        {
-            // ???? ????? ?????? ???
             return;
-        }
 
         var clientId = intro.Id;
 
-        // ??? ?????? ????
-        _clientManager.RegisterClient(clientId);
-
-        // ????? ?????? ???? ????? ???????
+        _healthChecker.RegisterClient(clientId);
         _activeClients[clientId] = responseStream;
 
         try
         {
             await foreach (var message in requestStream.ReadAllAsync(context.CancellationToken))
             {
-                _clientManager.MarkClientActive(clientId);
+                _healthChecker.MarkClientActive(clientId);
 
                 var healthState = _healthChecker.GetCurrentState();
                 if (!healthState.IsEnabled)
@@ -73,27 +68,11 @@ public class MessageExchangeService : MessageChangeStream.MessageChangeStreamBas
                         await clientStream.WriteAsync(processed);
                     }
                 }
-                else if (message.PayloadCase == MessageExchange.PayloadOneofCase.Result)
-                {
-                    var result = message.Result;
-
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine($"[Result] ID: {result.Id}, Length: {result.MessageLength}, IsValid: {result.IsValid}");
-
-                    foreach (var kv in result.RegexResults)
-                    {
-                        Console.WriteLine($" - {kv.Key} : {kv.Value}");
-                    }
-
-                    Console.ResetColor();
-                }
             }
-
         }
         finally
         {
-            // ??? ???? ?????? ????? ??? ??????
-            _clientManager.CheckInActiveClients();
+            _clientManager.CheckInactiveClients();
             _activeClients.TryRemove(clientId, out _);
         }
     }

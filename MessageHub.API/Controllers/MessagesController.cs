@@ -1,4 +1,7 @@
-﻿using Grpc.Core;
+﻿using Application.Contracts;
+using Grpc.Core;
+using Messaging.EventHandler;
+using Messaging.Grpc.Services;
 using Messaging.Protos;
 using Messaging.Queues;
 using Microsoft.AspNetCore.Http;
@@ -13,20 +16,33 @@ namespace MessageHub.API.Controllers
     [ApiController]
     public class MessagesController : ControllerBase
     {
-        private readonly QueueSimulator _queueSimulator;
+        private readonly MessageChangeStream.MessageChangeStreamClient _grpcClient;
 
-        public MessagesController(QueueSimulator queueSimulator)
+        public MessagesController(MessageChangeStream.MessageChangeStreamClient grpcClient)
         {
-            _queueSimulator = queueSimulator;
+            _grpcClient = grpcClient;
         }
 
         [HttpPost("send")]
-        public IActionResult SendMessage([FromBody] RawMessageDto dto)
+        public async Task<IActionResult> SendMessage([FromBody] RawMessageDto dto)
         {
+            var grpcMessage = new RawMessage
+            {
+                Id = dto.Id,
+                Message = dto.Message,
+                Sender = dto.Sender,
+            };
 
-            _queueSimulator.DoEnqueue(dto);
+            try
+            {
+             //   await _grpcClient.Sen
+            }
+            catch (Exception)
+            {
 
-            return Ok(new { Status = "Message queued" });
+                throw;
+            }
+            return Ok();
         }
     }
 }
