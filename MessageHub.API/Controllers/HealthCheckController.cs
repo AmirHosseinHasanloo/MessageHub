@@ -1,27 +1,31 @@
 ﻿using Application.Contracts;
 using Core.Domain.HealthCheckDTOs;
-using Microsoft.AspNetCore.Http;
+using Messaging.EventHandler;
+using Messaging.Services;
 using Microsoft.AspNetCore.Mvc;
+using SharedLayer.Common;
 
 namespace MessageHub.API.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class HealthCheckController : ControllerBase
     {
-        private IHealthCheckService _healthCheckService;
-
-        public HealthCheckController(IHealthCheckService healthCheckService)
+        private readonly IHealthCheckService _healthCheckService;
+        private readonly HealthChecker _healthChecker;
+        public HealthCheckController(IHealthCheckService healthCheckService, HealthChecker healthChecker)
         {
             _healthCheckService = healthCheckService;
+            _healthChecker = healthChecker;
         }
 
         [HttpPost("health")]
-        public ActionResult CheckHealth([FromBody] HealthCheckRequest request)
+        public IActionResult CheckHealth([FromBody] HealthCheckRequest request)
         {
-            var response = _healthCheckService.Handle(request);
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
-            //TODO : Add fluent Validation.
+            var response = _healthChecker.GetCurrentState();
             return Ok(response);
         }
     }

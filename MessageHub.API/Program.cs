@@ -2,10 +2,10 @@
 using Infrastructure;
 using Messaging.EventHandler;
 using Messaging.Grpc.Services;
-using Messaging.Services;
 using SharedLayer.Common;
 using System.Net.NetworkInformation;
-using Messaging.Protos; // یا namespace موجود در فایل .proto
+using Messaging.Protos;
+using Messaging.Services; // یا namespace موجود در فایل .proto
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,25 +21,20 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddHttpClient<HealthChecker>(client =>
 {
-    client.BaseAddress = new Uri("https://localhost:7159");
+    client.BaseAddress = new Uri("https://localhost:7159/api/HealthCheck/health");
 });
 
-builder.Services.AddHttpClient<HealthChecker>();
 builder.Services.AddSingleton<HealthChecker>(sp =>
 {
     var httpClient = sp.GetRequiredService<HttpClient>();
     var logger = sp.GetRequiredService<ILogger<HealthChecker>>();
     var clientManager = sp.GetRequiredService<ClientManager>();
     var id = MacAddressHelper.GenerateStableId();
-    var healthUrl = "https://localhost:7159/api/module/health";
+    var healthUrl = "https://localhost:7159/api/HealthCheck/health";
     return new HealthChecker(httpClient, healthUrl, id, logger, clientManager);
 });
+builder.Services.AddSingleton<IHealthCheckService, HealthCheckService>();
 
-
-
-builder.Services.AddLogging();
-
-builder.Services.AddSingleton<ClientManager>();
 builder.Services.AddHostedService<ClientCleanupService>();
 
 builder.Services.AddGrpcClient<MessageChangeStream.MessageChangeStreamClient>(options =>
@@ -48,12 +43,13 @@ builder.Services.AddGrpcClient<MessageChangeStream.MessageChangeStreamClient>(op
 });
 
 
-#region DI Container
+builder.Services.AddSingleton<ClientManager>();
+builder.Services.AddLogging();
 
 
-builder.Services.AddScoped<IHealthCheckService, HealthCheckService>();
 
-#endregion
+
+
 
 var app = builder.Build();
 
@@ -67,6 +63,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
+app.UseRouting();
 app.MapControllers();
 
 app.Run();

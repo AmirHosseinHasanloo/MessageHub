@@ -47,6 +47,10 @@ namespace Messaging.Protos {
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Marshaller<global::Messaging.Protos.MessageExchange> __Marshaller_MessageExchange = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Messaging.Protos.MessageExchange.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Messaging.Protos.RawMessage> __Marshaller_RawMessage = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Messaging.Protos.RawMessage.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Protobuf.WellKnownTypes.Empty.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static readonly grpc::Method<global::Messaging.Protos.MessageExchange, global::Messaging.Protos.MessageExchange> __Method_Communicate = new grpc::Method<global::Messaging.Protos.MessageExchange, global::Messaging.Protos.MessageExchange>(
@@ -55,6 +59,14 @@ namespace Messaging.Protos {
         "Communicate",
         __Marshaller_MessageExchange,
         __Marshaller_MessageExchange);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::Messaging.Protos.RawMessage, global::Google.Protobuf.WellKnownTypes.Empty> __Method_SendRawMessage = new grpc::Method<global::Messaging.Protos.RawMessage, global::Google.Protobuf.WellKnownTypes.Empty>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "SendRawMessage",
+        __Marshaller_RawMessage,
+        __Marshaller_google_protobuf_Empty);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -72,6 +84,12 @@ namespace Messaging.Protos {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::Google.Protobuf.WellKnownTypes.Empty> SendRawMessage(global::Messaging.Protos.RawMessage request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
@@ -80,7 +98,8 @@ namespace Messaging.Protos {
     public static grpc::ServerServiceDefinition BindService(MessageChangeStreamBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_Communicate, serviceImpl.Communicate).Build();
+          .AddMethod(__Method_Communicate, serviceImpl.Communicate)
+          .AddMethod(__Method_SendRawMessage, serviceImpl.SendRawMessage).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -91,6 +110,7 @@ namespace Messaging.Protos {
     public static void BindService(grpc::ServiceBinderBase serviceBinder, MessageChangeStreamBase serviceImpl)
     {
       serviceBinder.AddMethod(__Method_Communicate, serviceImpl == null ? null : new grpc::DuplexStreamingServerMethod<global::Messaging.Protos.MessageExchange, global::Messaging.Protos.MessageExchange>(serviceImpl.Communicate));
+      serviceBinder.AddMethod(__Method_SendRawMessage, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Messaging.Protos.RawMessage, global::Google.Protobuf.WellKnownTypes.Empty>(serviceImpl.SendRawMessage));
     }
 
   }

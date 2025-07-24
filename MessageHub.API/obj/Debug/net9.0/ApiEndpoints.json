@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Domain.HealthCheckRequest",
+        "Type": "Core.Domain.HealthCheckDTOs.HealthCheckRequest",
         "IsRequired": true
       }
     ],

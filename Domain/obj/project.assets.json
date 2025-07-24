@@ -8,23 +8,23 @@
     "net9.0": []
   },
   "packageFolders": {
-    "C:\\Users\\hassanloo\\.nuget\\packages\\": {},
+    "C:\\Users\\Amirhosein\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Domain\\Core.csproj",
+      "projectUniqueName": "C:\\Users\\Amirhosein\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Domain\\Core.csproj",
       "projectName": "Core",
-      "projectPath": "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Domain\\Core.csproj",
-      "packagesPath": "C:\\Users\\hassanloo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hassanloo\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Domain\\obj\\",
+      "projectPath": "C:\\Users\\Amirhosein\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Domain\\Core.csproj",
+      "packagesPath": "C:\\Users\\Amirhosein\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Amirhosein\\source\\repos\\AmirHosseinHasanloo\\MessageHub\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\hassanloo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Amirhosein\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

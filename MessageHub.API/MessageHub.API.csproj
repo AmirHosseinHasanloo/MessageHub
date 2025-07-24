@@ -20,10 +20,7 @@
 		<PackageReference Include="Grpc.Core" Version="2.46.6" />
 	</ItemGroup>
 	<ItemGroup>
-		<protobuf Include="..\Messaging.Grpc\Protos\message_stream.proto" GrpcServices="Both" />
-	
-		<Protobuf Include="..\Messaging.Grpc\Protos\message.proto" GrpcServices="Both" />
-		
+		<protobuf Include="..\Messaging.Grpc\Protos\message_stream.proto" GrpcServices="Both" />		
 	</ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\Application\Application.csproj" />

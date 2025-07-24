@@ -35,7 +35,8 @@ namespace MessageHub.API.Controllers
 
             try
             {
-             //   await _grpcClient.Sen
+               await _grpcClient.SendRawMessageAsync(grpcMessage);
+
             }
             catch (Exception)
             {

@@ -42,6 +42,7 @@ public class HealthChecker : IDisposable
             try
             {
                 var response = await _httpClient.PostAsJsonAsync(_healthUrl, request);
+
                 if (response.IsSuccessStatusCode)
                 {
                     var body = await response.Content.ReadFromJsonAsync<HealthCheckResponse>();

@@ -12,7 +12,6 @@
 
     <ItemGroup>
       <protobuf Include="Protos\message_stream.proto" GrpcServices="server" />
-        <Protobuf Include="Protos\message.proto" GrpcServices="Server" />
     </ItemGroup>
     
     <ItemGroup>

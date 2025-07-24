@@ -19,13 +19,16 @@
 
 	<ItemGroup>
 		<protobuf Include="..\Messaging.Grpc\Protos\message_stream.proto" GrpcServices="Client" />
-		<Protobuf Include="..\Messaging.Grpc\Protos\message.proto" GrpcServices="Client" />
 	</ItemGroup>
 	
     <ItemGroup>
       <PackageReference Include="Grpc.Core" Version="2.46.6" />
       <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="9.0.7" />
       <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.7" />
+    </ItemGroup>
+	
+    <ItemGroup>
+      <Folder Include="Services\" />
     </ItemGroup>
 
 </Project>

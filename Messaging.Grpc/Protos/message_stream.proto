@@ -1,9 +1,11 @@
 syntax = "proto3";
+import "google/protobuf/empty.proto";
 
 option csharp_namespace = "Messaging.Protos";
 
 service MessageChangeStream {
   rpc Communicate (stream MessageExchange) returns (stream MessageExchange);
+  rpc SendRawMessage (RawMessage) returns (google.protobuf.Empty); 
 }
 
 message MessageExchange {

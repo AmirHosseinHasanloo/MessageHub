@@ -1,2 +1,3 @@
 obj\Debug\net9.0\Protos/MessageStream.cs \
-obj\Debug\net9.0\Protos/MessageStreamGrpc.cs: Protos/message_stream.proto
+obj\Debug\net9.0\Protos/MessageStreamGrpc.cs: C:/Users/Amirhosein/.nuget/packages/grpc.tools/2.72.0/build/native/include/google/protobuf/empty.proto\
+ Protos/message_stream.proto

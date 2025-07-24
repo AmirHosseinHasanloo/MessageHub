@@ -14,6 +14,5 @@
 	</ItemGroup>
 	<ItemGroup>
 		<protobuf Include="..\Messaging.Grpc\Protos\message_stream.proto" GrpcServices="Client" />
-		<Protobuf Include="..\Messaging.Grpc\Protos\message.proto" GrpcServices="Client" />
 	</ItemGroup>
 </Project>

@@ -4,11 +4,13 @@
     "Projects": [
       {
         "Path": "MessageHub.API\\MessageHub.API.csproj",
-        "Action": "Start"
+        "Action": "Start",
+        "DebugTarget": "https"
       },
       {
         "Path": "Messaging.Grpc\\Messaging.Grpc.csproj",
-        "Action": "Start"
+        "Action": "Start",
+        "DebugTarget": "https"
       }
     ]
   }

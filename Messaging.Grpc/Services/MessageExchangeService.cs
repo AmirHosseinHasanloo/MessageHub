@@ -1,10 +1,11 @@
-using Application.Contracts;
+﻿using Application.Contracts;
+using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
 using Messaging.EventHandler;
 using Messaging.Protos;
-using Messaging.Services;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using System.Collections.Concurrent;
+using System.Threading.Channels;
 
 namespace Messaging.Grpc.Services;
 
@@ -12,20 +13,41 @@ public class MessageExchangeService : MessageChangeStream.MessageChangeStreamBas
 {
     private readonly IGrpcHealthChecker _healthChecker;
     private readonly GrpcClientManager _clientManager;
+    private readonly Channel<MessageExchange> _messageChannel;
+    private readonly ILogger<MessageExchangeService> _logger;
 
     private readonly ConcurrentDictionary<string, IServerStreamWriter<MessageExchange>> _activeClients = new();
 
-    public MessageExchangeService(IGrpcHealthChecker healthChecker, GrpcClientManager clientManager)
+    public MessageExchangeService(IGrpcHealthChecker healthChecker,
+        GrpcClientManager clientManager,
+        Channel<MessageExchange> messageChannel,
+        ILogger<MessageExchangeService> logger)
     {
         _healthChecker = healthChecker;
         _clientManager = clientManager;
+        _messageChannel = messageChannel;
+        _logger = logger;
     }
 
-
-    public override async Task Communicate(IAsyncStreamReader<MessageExchange> requestStream,
-        IServerStreamWriter<MessageExchange> responseStream, ServerCallContext context)
+    public override async Task<Empty> SendRawMessage(RawMessage request, ServerCallContext context)
     {
-        if (!await requestStream.MoveNext())
+        var exchangeMessage = new MessageExchange()
+        {
+            Raw = request
+        };
+
+        await _messageChannel.Writer.WriteAsync(exchangeMessage);
+
+        // this is google protobuf.empty
+        return new Empty();
+    }
+
+    public override async Task Communicate(
+        IAsyncStreamReader<MessageExchange> requestStream,
+        IServerStreamWriter<MessageExchange> responseStream,
+        ServerCallContext context)
+    {
+        if (!await requestStream.MoveNext(context.CancellationToken))
             return;
 
         var intro = requestStream.Current.Intro;
@@ -34,6 +56,7 @@ public class MessageExchangeService : MessageChangeStream.MessageChangeStreamBas
 
         var clientId = intro.Id;
 
+        
         _healthChecker.RegisterClient(clientId);
         _activeClients[clientId] = responseStream;
 
@@ -47,26 +70,18 @@ public class MessageExchangeService : MessageChangeStream.MessageChangeStreamBas
                 if (!healthState.IsEnabled)
                     break;
 
-                if (message.PayloadCase == MessageExchange.PayloadOneofCase.Raw)
+                switch (message.PayloadCase)
                 {
-                    var rawMsg = message.Raw;
+                    case MessageExchange.PayloadOneofCase.Raw:
+                        await HandleRawMessage(clientId, message.Raw);
+                        break;
 
-                    var processed = new MessageExchange
-                    {
-                        Result = new ProcessedMessage
-                        {
-                            Id = rawMsg.Id,
-                            Engine = "RegexEngine",
-                            MessageLength = rawMsg.Message.Length,
-                            IsValid = true,
-                            RegexResults = { { "HasHello", rawMsg.Message.Contains("hello") } }
-                        }
-                    };
+                    case MessageExchange.PayloadOneofCase.Result:
+                        // اگه در آینده خواستی سمت کلاینت ProcessedMessage بفرسته
+                        break;
 
-                    if (_activeClients.TryGetValue(clientId, out var clientStream))
-                    {
-                        await clientStream.WriteAsync(processed);
-                    }
+                    default:
+                        break;
                 }
             }
         }
@@ -74,6 +89,26 @@ public class MessageExchangeService : MessageChangeStream.MessageChangeStreamBas
         {
             _clientManager.CheckInactiveClients();
             _activeClients.TryRemove(clientId, out _);
+        }
+    }
+
+    private async Task HandleRawMessage(string clientId, RawMessage raw)
+    {
+        var result = new MessageExchange
+        {
+            Result = new ProcessedMessage
+            {
+                Id = raw.Id,
+                Engine = "RegexEngine",
+                MessageLength = raw.Message.Length,
+                IsValid = true,
+                RegexResults = { { "HasHello", raw.Message.Contains("hello") } }
+            }
+        };
+
+        if (_activeClients.TryGetValue(clientId, out var stream))
+        {
+            await stream.WriteAsync(result);
         }
     }
 }

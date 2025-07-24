@@ -21,15 +21,18 @@ namespace Infrastructure
         private Timer _timer;
         private HealthCheckResponse _CurrentState = new();
 
-        public GrpcHealthChecker(HttpClient httpClient, string healthUrl,
-            string id, ILogger<GrpcHealthChecker> logger,
-            GrpcClientManager clientManager, Timer timer)
+        public GrpcHealthChecker(HttpClient httpClient,
+       string healthUrl,    
+       string id,
+       ILogger<GrpcHealthChecker> logger,
+       GrpcClientManager clientManager)
         {
             _httpClient = httpClient;
-            _healthUrl = healthUrl;
+            _healthUrl = healthUrl;   
             _id = id;
             _logger = logger;
             _clientManager = clientManager;
+
             _timer = new Timer(async _ => await CheckHealthAsync(), null,
                 TimeSpan.Zero, TimeSpan.FromSeconds(30));
         }
